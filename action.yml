@@ -1,0 +1,22 @@
+# action.yml
+name: 'confluence-markdown-publish'
+description: 'Render and publish GitHub-flavored MarkDown file to Confluence'
+inputs:
+  from: 
+    description: 'Path to the markdown file (relative to root of repository)'
+    required: true
+  to:
+    description: 'The page ID in Confluence to overwrite'
+    required: true
+  cloud:
+    description: 'Atlassian Cloud ID (e.g. "foo" for foo.atlassian.net)'
+    required: true
+  user:
+    description: 'Username of owner of Atlassian API Token (e.g. "username@example.com")'
+    required: true
+  token:
+    description: 'Atlassian API Token'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
