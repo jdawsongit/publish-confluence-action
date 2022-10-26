@@ -6,8 +6,8 @@ It based on https://github.com/lovoo/Github-action-confluence-sync. That package
 
 # Build Docker image
 
-docker build -t jdawson/action-publish-markdown:latest -f Dockerfile .
+docker build -t jdawson/publish-confluence-action:latest -f Dockerfile .
 
 # Publish to Docker Hub
 
-docker push jdawson/action-publish-markdown
+docker push jdawson/publish-confluence-action
