@@ -1,2 +1,4 @@
 .python-version
 *.swp
+env.sh
+.publish_map
