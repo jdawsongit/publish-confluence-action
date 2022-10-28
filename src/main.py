@@ -12,12 +12,13 @@ class Config:
             self.cloud = os.environ['INPUT_CLOUD']
             self.user = os.environ['INPUT_USER']
             self.token = os.environ['INPUT_TOKEN']
-            if 'INPUT_FROM' in os.environ:
-                from_path = os.environ['INPUT_FROM']
-                to_page_id = os.environ['INPUT_TO']
+            from_path = os.environ['INPUT_FROM']
+            to_page_id = os.environ['INPUT_TO']
+            if from_path and to_page_id:
                 self.publish_map[from_path] = to_page_id
-            if 'INPUT_PUBLISH_MAP' in os.environ:
-                publish_map_path = os.path.join(self.workspace, os.environ['INPUT_PUBLISH_MAP'])
+            publish_map_relative_path = os.environ['INPUT_PUBLISH_MAP']
+            if publish_map_relative_path:
+                publish_map_path = os.path.join(self.workspace, publish_map_relative_path)
                 self.publish_map.update(self.read_publish_map(publish_map_path))
         except KeyError as e:
             raise Exception(f'Missing value for {e}')
