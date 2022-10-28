@@ -4,10 +4,13 @@ description: 'Render and publish GitHub-flavored MarkDown file to Confluence'
 inputs:
   from: 
     description: 'Path to the markdown file (relative to root of repository)'
-    required: true
+    required: false
   to:
     description: 'The page ID in Confluence to overwrite'
-    required: true
+    required: false
+  publish_map:
+    description: 'Path to a publish map file (each line in the format "FROM TO") to publish multiple docs at once'
+    required: false
   cloud:
     description: 'Atlassian Cloud ID (e.g. "foo" for foo.atlassian.net)'
     required: true
